@@ -1,0 +1,43 @@
+import { CategoryBox } from "@/types/store";
+
+export const DEFAULT_CATEGORY_BOXES: CategoryBox[] = [
+  {
+    id: "box-italy-bracelet",
+    title: "CUSTOMIZE ITALY CHARM",
+    titleKh: "រចនាខ្សែដៃអ៊ីតាលី Italy Charm",
+    subtitle: "316L Surgical Inox · 3D Live Studio",
+    image: "/assets/categories/custom-bracelet.jpg",
+    actionType: "link",
+    actionValue: "/italy-bracelet",
+    span: "full",
+    badge: "STUDIO 🔗",
+    order: 1,
+    active: true,
+  },
+  {
+    id: "box-minifigure",
+    title: "MINIFIGURE",
+    titleKh: "តុក្កតាមីនី Minifigure",
+    subtitle: "Anime & Superhero Legends",
+    image: "/assets/categories/minifigure.jpg",
+    actionType: "category",
+    actionValue: "minifigure",
+    span: "half",
+    badge: "VIRAL 🔥",
+    order: 2,
+    active: true,
+  },
+  {
+    id: "box-toy",
+    title: "TOY",
+    titleKh: "ប្រដាប់ក្មេងលេង Toys & RC",
+    subtitle: "Tech Toys, Speed Racers & STEM",
+    image: "/assets/categories/toy.jpg",
+    actionType: "category",
+    actionValue: "toy-universe",
+    span: "half",
+    badge: "TRENDING ⚡",
+    order: 3,
+    active: true,
+  },
+];

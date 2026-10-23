@@ -1,80 +1,34 @@
-# Somphea Reak Studio – Customer Storefront (Web & Mobile)
+# 🧸 Somphea Reak – Customer Storefront (Web & Mobile)
 
-> **Cambodia Kingdom of Wonder • Premium Collectibles, Toys & Customizable Italy Charm Jewelry**  
-> Modern, luxury cross-platform storefront built with React Native and Expo (Web, iOS, Android).
+The official customer-facing e-commerce storefront for **Somphea Reak (សម្ភារៈ)** Toy & Italian Modular Charm Studio.
 
----
+## 🚀 Architecture
+- **Framework**: Next.js 15 (App Router) + React 19 + TypeScript
+- **Styling**: Tailwind CSS + Framer Motion + Lucide Icons
+- **Database**: Neon Serverless PostgreSQL (`@neondatabase/serverless`)
+- **Hosting**: Render.com Web Service
+- **Companion App**: [sompheareak-admin](https://github.com/Mingstar556/sompheareak-admin) (Dedicated Admin Suite sharing the same Neon DB)
 
-## 🌟 Key Features
+## 📦 Features
+- 🍱 **Top Category Bento Grid**: Visually stunning bento cards highlighting key categories.
+- 🎪 **Arcade Category Bar**: Dynamic category pills with Khmer/English localization and emoji icons.
+- 🛍️ **Tactile Product Catalog**: 2-column mobile and 4-column desktop layout with high-converting cart flow.
+- 🇮🇹 **Italian Modular Stainless Steel Bracelet Studio**: Interlocking charm simulation, customizable links, and automatic unique charm code generation.
+- 📱 **Floating Customer Dock**: Center mascot logo with instant click-to-home and page refresh, customer order history lookup, and account profile.
+- 💳 **ABA KHQR & Instant Receipt System**: Seamless Cambodian digital payments with printable receipts and direct seller Telegram chat.
 
-- **Interactive 9mm Italian Charm Bracelet Builder**: Real-time visual charm linking, link expansion/removal, and dynamic wrist preview.
-- **Catalog & Big Category Browsing**: Smooth browsing with category filters, search, and instant modal previews.
-- **Cart & Direct Checkout**: Voucher selector, auto point calculations, and seamless Telegram receipt integration.
-- **Bilingual & Adaptive Dark Mode**: High-contrast luxury styling in Khmer (ភាសាខ្មែរ) and English with instant theme transitions.
-- **Universal Web Deployment**: Zero-config export ready for Vercel, Netlify, Cloudflare Pages, or any static host.
+## 🛠️ Deploy to Render.com
 
----
-
-## 🚀 Quick Start (Local Development)
-
-### 1. Install Dependencies
-```bash
-npm install
-```
-
-### 2. Start Local Development Server
-```bash
-# Launch on web (default: http://localhost:8081)
-npm run web
-
-# Or launch Expo bundler for iOS/Android/Web
-npm start
-```
-
----
-
-## 🌐 Deploy as a Website
-
-### Option 1: Vercel (Recommended — One Click)
-1. Push this repository to GitHub (`sompheareak-pro`).
-2. Go to [Vercel Dashboard](https://vercel.com/new) and import your `sompheareak-pro` repository.
-3. Vercel automatically detects the build configuration via `vercel.json`:
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-4. *(Optional)* Add Environment Variable:
-   - `EXPO_PUBLIC_API_URL`: Your backend API URL (e.g. `https://api.sompheareak.com`)
-5. Click **Deploy**!
-
-### Option 2: Netlify
-1. Import repository on [Netlify](https://app.netlify.com/start).
-2. The included `netlify.toml` automatically configures:
-   - **Build command**: `npm run build`
-   - **Publish directory**: `dist`
-   - **SPA Redirects**: `/* -> /index.html`
-3. *(Optional)* Set `EXPO_PUBLIC_API_URL` under Site configuration > Environment variables.
-4. Click **Deploy site**!
-
-### Option 3: Manual Static Build
-```bash
-# Export static production website into ./dist
-npm run build
-
-# Preview locally
-npm run preview
-```
-Upload the generated `dist/` directory to any static web host, S3, Firebase Hosting, Cloudflare Pages, or GitHub Pages.
-
----
-
-## ⚙️ Environment Variables
-
-| Variable | Description | Default |
-| :--- | :--- | :--- |
-| `EXPO_PUBLIC_API_URL` | Base URL of the Somphea Reak API server | Auto-resolves (`http://localhost:5000` or same-origin) |
-
----
-
-## 📄 License
-
-See [LICENSE](LICENSE) for full proprietary license terms.  
-Copyright © 2026 Somphea Reak Studio (សម្ភារៈ). All Rights Reserved.
+1. Go to [Render Dashboard](https://dashboard.render.com/) and click **New +** -> **Web Service**.
+2. Connect your GitHub repository `Mingstar556/sompheareak-pro`.
+3. Configure the settings:
+   - **Environment**: `Node`
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm start`
+4. Add the following **Environment Variables**:
+   - `DATABASE_URL`: Your Neon PostgreSQL connection string:
+     ```
+     postgresql://neondb_owner:YOUR_PASSWORD@ep-YOUR-PROJECT.us-east-2.aws.neon.tech/neondb?sslmode=require
+     ```
+   - `NEXT_PUBLIC_ADMIN_URL`: URL to your deployed `sompheareak-admin` web service.
+5. Click **Deploy Web Service**.
